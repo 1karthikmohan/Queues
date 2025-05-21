@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Basic styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333; /* Default text color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+p { /* Global paragraph style */
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #666; /* Default paragraph color */
+}
+
+a { /* Global anchor style */
+    color: #007bff; /* Primary accent color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* Reduce h1 font size on smaller screens */
+    }
+    header p {
+        font-size: 1em; /* Reduce p font size in header on smaller screens */
+    }
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+main h2 { /* Global style for section titles in main */
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-top: 0; /* Remove default top margin */
+    margin-bottom: 20px; /* Consistent bottom margin */
+}
+
+#about-us {
+    padding: 20px;
+    text-align: justify;
+    background-color: #fff; /* Assuming a white background for the main content area */
+}
+
+/* #about-us h2 specific margin, if needed, otherwise covered by main h2 */
+/* No specific h2 style needed here anymore, covered by main h2 */
+
+
+/* #about-us p is covered by global p if styles are similar */
+/* No specific p style needed here anymore, covered by global p */
+
+#services-offered {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light grey background to differentiate from other sections */
+}
+
+/* Specific h2 style for services-offered removed, covered by main h2 */
+
+/* #services-offered h2 specific margin, if needed */
+/* No specific h2 style needed here anymore, covered by main h2 */
+
+#services-offered ul {
+    list-style-type: disc; /* Standard disc bullets */
+    padding-left: 40px; /* Indent list items */
+    margin: 0;
+}
+
+#services-offered li {
+    line-height: 1.8; /* Increased line height for list items */
+    color: #555;
+    margin-bottom: 8px; /* Space between list items */
+}
+
+#portfolio-highlights {
+    padding: 20px;
+    background-color: #fff; /* White background for this section */
+}
+
+/* Specific h2 style for portfolio-highlights removed, covered by main h2 */
+
+/* #portfolio-highlights h2 specific margin, if needed */
+/* No specific h2 style needed here anymore, covered by main h2 */
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    justify-content: space-around; /* Distribute items evenly with space around them */
+    gap: 20px; /* Space between gallery items */
+}
+
+.project {
+    width: calc(33.333% - 20px); /* Adjust width for 3 columns, considering gap. May need media queries for smaller screens */
+    background-color: #f9f9f9; /* Light background for each project card */
+    border: 1px solid #eee; /* Subtle border for project cards */
+    border-radius: 5px; /* Rounded corners for project cards */
+    overflow: hidden; /* Ensure content fits within rounded corners */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center text content within the project card */
+    margin-bottom: 20px; /* Space below each project card if they wrap */
+}
+
+.project img {
+    width: 100%; /* Make images responsive, fill the width of the card */
+    height: 200px; /* Fixed height for images; adjust as needed */
+    object-fit: cover; /* Cover the area, cropping if necessary, to maintain aspect ratio */
+    border-bottom: 1px solid #eee; /* Separator line below image */
+}
+
+.project h3 {
+    font-size: 1.2em;
+    color: #444;
+    margin: 15px 10px 10px; /* Top, horizontal, bottom margin */
+}
+
+.project p {
+    font-size: 0.9em;
+    color: #777;
+    padding: 0 15px 15px; /* Horizontal and bottom padding */
+    line-height: 1.5;
+}
+
+/* Responsive adjustments for gallery */
+@media (max-width: 992px) {
+    .project {
+        width: calc(50% - 20px); /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .project {
+        width: 100%; /* 1 column on small screens */
+    }
+}
+
+#client-testimonials {
+    padding: 20px 40px; /* More horizontal padding for a slightly narrower content area */
+    background-color: #f9f9f9; /* Soft white/very light grey, consistent with other sections */
+    text-align: center;
+}
+
+#client-testimonials h2 {
+    margin-bottom: 25px;
+    font-size: 2em;
+    color: #333;
+}
+
+/* #client-testimonials h2 specific margin, if needed */
+#client-testimonials h2 { margin-bottom: 25px; } /* Keep this override */
+
+.testimonial {
+    max-width: 600px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the testimonial block */
+}
+
+.testimonial blockquote {
+    margin: 0;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 5px solid #007bff; /* Blue accent line */
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-style: italic;
+}
+
+.testimonial blockquote p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.testimonial blockquote footer {
+    font-size: 1em;
+    color: #007bff; /* Match accent line color */
+    text-align: right;
+    font-style: normal;
+}
+
+#contact-us {
+    padding: 20px;
+    background-color: #fff; /* White background */
+}
+
+/* Specific h2 style for contact-us removed, covered by main h2 */
+
+/* #contact-us h2 specific margin, if needed */
+/* No specific h2 style needed here anymore, covered by main h2 */
+
+#contact-us form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light grey background for the form area */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#contact-us form div {
+    margin-bottom: 15px;
+}
+
+#contact-us label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+#contact-us input[type="text"],
+#contact-us input[type="email"],
+#contact-us textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding doesn't affect overall width */
+    font-size: 1em;
+}
+
+#contact-us textarea {
+    resize: vertical; /* Allow vertical resizing, disable horizontal */
+}
+
+#contact-us button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-us button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Fade-in animation classes */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.75s ease-out, transform 0.75s ease-out;
+}
+
+.fade-in-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
